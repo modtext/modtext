@@ -1,6 +1,6 @@
 # The %Text (ModText) Modular Text Modification System
 
-%Text (pronounce "mod text") is a text-based markup system.  The tenets of %Text
+%Text (pronounced "mod text") is a text-based markup system.  The tenets of %Text
 are as follows:
 
 1) Be readable
