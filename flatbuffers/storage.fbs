@@ -1,0 +1,44 @@
+namespace ModText.Types;
+
+// An identifier for a text transformer called a "Processor"
+table Processor {
+    name: string;
+}
+
+// Parameters which may be passed to a processor
+union Parameter {
+    symbol:uint32,
+    string:string,
+    int:int64,
+    float:double,
+}
+
+// A fragment of a document, either parsed into blocks or as a raw string
+union Fragment { string, [Block] }
+
+// A fragment of a document with associated processing information and
+// parameters
+table Block {
+    // The Processor uint32 ID represents the index into the Document Processors
+    // list
+    processor: uint32;
+    parameters: [Parameter];
+    body: Fragment;
+}
+
+// A document is a root block with the special privilege of storing processor
+// and symbol lookups
+table Document {
+    // List of processors.
+    //
+    // All Processor uint32 IDs in the document represent the index into this
+    // Processor list.
+    processors: [Processor];
+
+    // All symbol uint32 IDs in the document represent the index into this
+    // symbol list.
+    symbols: [string];
+
+    // The contents of the document being processed
+    root: Block;
+}
