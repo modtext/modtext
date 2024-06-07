@@ -5,16 +5,32 @@ table Processor {
     name: string;
 }
 
+table StringParameter { value: string; }
+table SymbolParameter { value: uint32; }
+table IntegerParameter { value: int64; }
+table FloatParameter { value: double; }
+
 // Parameters which may be passed to a processor
-union Parameter {
-    symbol:uint32,
-    string:string,
-    int:int64,
-    float:double,
+union ParameterType {
+    symbol:SymbolParameter,
+    string:StringParameter,
+    int:IntegerParameter,
+    float:FloatParameter,
+}
+
+table Parameter {
+    value: ParameterType;
+}
+
+table DocumentSpan {
+    value: string;
 }
 
 // A fragment of a document, either parsed into blocks or as a raw string
-union Fragment { string, [Block] }
+union FragmentType { DocumentSpan, Block }
+table Fragment {
+    value: FragmentType;
+}
 
 // A fragment of a document with associated processing information and
 // parameters
@@ -23,7 +39,7 @@ table Block {
     // list
     processor: uint32;
     parameters: [Parameter];
-    body: Fragment;
+    body: [Fragment];
 }
 
 // A document is a root block with the special privilege of storing processor
