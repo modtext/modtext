@@ -1,0 +1,10 @@
+[package]
+name = "schema"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+flatbuffers = { workspace = true }
+
+[build-dependencies]
+flatbuffers-build = "0.2.0" # +flatc-24.3.25

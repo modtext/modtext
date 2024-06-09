@@ -1,14 +1,15 @@
-[package]
-name = "modtext"
-version = "0.1.0"
-edition = "2021"
+[workspace]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+members = [
+    "modtext",
+    "schema",
+]
 
-[dependencies]
+resolver="2"
+
+[workspace.dependencies]
 flatbuffers = "=24.3.25"
-# serde_derive = "1.0"
-# serde = "1.0"
+schema = { path = "schema" }
 
-[build-dependencies]
+[workspace.build-dependencies]
 flatbuffers-build = "0.2.0" # +flatc-24.3.25
