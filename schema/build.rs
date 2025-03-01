@@ -5,7 +5,8 @@ fn main() {
         .compile()
         .expect("flatbuffer compilation failed");
 
-    for f in schema_files {
-        println!("cargo::rerun-if-changed={}", f);
-    }
+    // Done by flatbuffers-build in .compile()
+    // for f in schema_files {
+    //     println!("cargo::rerun-if-changed={}", f);
+    // }
 }
