@@ -17,7 +17,7 @@ other markup systems /using/ %Text.
 %Text markup is a bit of throwback to old "colloquial" bulletin board (BB)
 markup systems.  Unlike the hard to remember and visually indistinct nesting of
 the same symbols in systems like MarkDown (i.e. \*/italicized/\*,
-\*\**bolded*\*\*, \*\*\**/bold and italic/*\*\*\*), %Text dilineates each simple
+\*\**bolded*\*\*, \*\*\**/bold and italic/*\*\*\*), %Text delineates each simple
 format type with a unique symbol set.  All symbols may be escaped with a
 backslash ("\\").  This also allows for emphasis using formatting not supported
 in other systems... like underlining (😱).
